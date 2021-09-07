@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //引入刚才定义的hero路由
-const hero = require('./router/hero');
+const hero = require('./routes/hero');
 
 var app = express();
 

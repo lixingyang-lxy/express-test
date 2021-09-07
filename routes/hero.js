@@ -7,12 +7,14 @@ const Hero = require("../models/hero");
 
 // 查询所有英雄信息路由
 router.get("/hero", (req, res) => {
-  Hero.find({})
+  Hero.find({ })
     .sort({ update_at: -1 })
     .then(heros => {
+      console.log("heros: " + heros)
       res.json(heros);
     })
     .catch(err => {
+      console.log("err: " + err)
       console.log(2);
       res.json(err);
     });
@@ -22,9 +24,11 @@ router.get("/hero", (req, res) => {
 router.get("/hero/:id", (req, res) => {
   Hero.findById(req.params.id)
     .then(hero => {
+      console.log("hero: " + hero)
       res.json(hero);
     })
     .catch(err => {
+      console.log("err: " + err)
       res.json(err);
     });
 });
